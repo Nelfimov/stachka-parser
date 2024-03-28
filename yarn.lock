@@ -245,6 +245,17 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@vercel/ncc@npm:0.38.1":
+  version: 0.38.1
+  resolution: "@vercel/ncc@npm:0.38.1"
+  dependencies:
+    node-gyp: "npm:latest"
+  bin:
+    ncc: dist/ncc/cli.js
+  checksum: 10c0/3e6c08251ccc8c6c7ca6523f223e326c70950af787259252c8a19ef04a7f8cc4c42d4c1ddb94f227a9d0d1c5429f71e303daf6a356948b4f81bcd38d075c9b24
+  languageName: node
+  linkType: hard
+
 "abbrev@npm:^2.0.0":
   version: 2.0.0
   resolution: "abbrev@npm:2.0.0"
@@ -1856,6 +1867,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "stachka-parser@workspace:."
   dependencies:
+    "@vercel/ncc": "npm:0.38.1"
     axios: "npm:1.6.8"
     cheerio: "npm:1.0.0-rc.12"
     exceljs: "npm:4.4.0"

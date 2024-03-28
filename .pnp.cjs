@@ -26,6 +26,7 @@ const RAW_RUNTIME_STATE =
       [null, {\
         "packageLocation": "./",\
         "packageDependencies": [\
+          ["@vercel/ncc", "npm:0.38.1"],\
           ["axios", "npm:1.6.8"],\
           ["cheerio", "npm:1.0.0-rc.12"],\
           ["exceljs", "npm:4.4.0"],\
@@ -335,6 +336,16 @@ const RAW_RUNTIME_STATE =
         "packageLocation": "./.yarn/cache/@types-node-npm-14.18.63-a411f0ee60-626a371419.zip/node_modules/@types/node/",\
         "packageDependencies": [\
           ["@types/node", "npm:14.18.63"]\
+        ],\
+        "linkType": "HARD"\
+      }]\
+    ]],\
+    ["@vercel/ncc", [\
+      ["npm:0.38.1", {\
+        "packageLocation": "./.yarn/cache/@vercel-ncc-npm-0.38.1-529f6837ea-3e6c08251c.zip/node_modules/@vercel/ncc/",\
+        "packageDependencies": [\
+          ["@vercel/ncc", "npm:0.38.1"],\
+          ["node-gyp", "npm:10.1.0"]\
         ],\
         "linkType": "HARD"\
       }]\
@@ -2114,6 +2125,7 @@ const RAW_RUNTIME_STATE =
         "packageLocation": "./",\
         "packageDependencies": [\
           ["stachka-parser", "workspace:."],\
+          ["@vercel/ncc", "npm:0.38.1"],\
           ["axios", "npm:1.6.8"],\
           ["cheerio", "npm:1.0.0-rc.12"],\
           ["exceljs", "npm:4.4.0"],\
