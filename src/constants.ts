@@ -27,6 +27,7 @@ export const USERS_COLUMNS = [
   { header: 'Должность', key: 'column2', width: 30 },
   { header: 'Компания', key: 'column3', width: 30 },
   { header: 'Город', key: 'column4', width: 30 },
+  { header: 'Доклад', key: 'column4', width: 30 },
 ]
 export const USERS_WORKSHEET_NAME = 'Участники'
 export const EVENTS_FIRST_DAY_WORKSHEET_NAME = 'Эвенты 12.04'

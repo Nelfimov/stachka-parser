@@ -2,27 +2,30 @@ import { fetchPageData }         from './fetcher.js'
 import { parseEventsHtmlToData } from './parsers.js'
 import { parseUsersHtmlToData }  from './parsers.js'
 
-export const processPages = async (baseUrl: string, startPage?: number, endPage?: number) => {
-  let allData: string[] = []
-  let eventsData = null
+export const processPages = async (
+  usersURL: string,
+  eventsURL: string,
+  startPage: number,
+  endPage: number,
+) => {
+  let usersData: string[] = []
 
-  if (startPage && endPage) {
-    for (let page = startPage; page <= endPage; page++) {
-      const url = `${baseUrl}?page=${page}`
+  for (let page = startPage; page <= endPage; page++) {
+    const url = `${usersURL}?page=${page}`
 
-      console.log(`Обработка: ${url}`)
+    console.log(`Обработка: ${url}`)
 
-      const html = await fetchPageData(url)
-      const usersPageData = parseUsersHtmlToData(html)
-      allData = allData.concat(usersPageData)
-    }
-  } else {
-    console.log(`Обработка: ${baseUrl}`)
-
-    const html = await fetchPageData(baseUrl)
-
-    eventsData = parseEventsHtmlToData(html)
+    const html = await fetchPageData(url)
+    const usersPageData = parseUsersHtmlToData(html)
+    usersData = usersData.concat(usersPageData)
   }
 
-  return eventsData ?? allData
+  console.log(`Обработка: ${eventsURL}`)
+
+  const html = await fetchPageData(eventsURL)
+
+  // @ts-ignore
+  const { firstDay, secondDay, users } = parseEventsHtmlToData(html, usersData)
+
+  return { firstDay, secondDay, users }
 }

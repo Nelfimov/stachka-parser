@@ -5,8 +5,7 @@ import { createExcelFile }  from './create-excel-file.js'
 import { processPages }     from './processors.js'
 
 (async () => {
-  const users = await processPages(USERS_URL, 1, 17)
-  const events = await processPages(EVENTS_URL)
+  const data = await processPages(USERS_URL, EVENTS_URL,1, 17)
   // @ts-ignore
-  await createExcelFile(users, events, FILE_PATH)
+  await createExcelFile(data, FILE_PATH)
 })()
